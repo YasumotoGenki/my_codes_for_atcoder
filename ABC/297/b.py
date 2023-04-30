@@ -1,36 +1,12 @@
-from math import gcd
+s = input()
 
-a, b = map(int, input().split())
-ans = 0
+left_b_idx = s.index('B')
+right_b_idx = s.rindex('B')
+if left_b_idx % 2 == right_b_idx % 2:
+    print("No")
+    exit()
 
-memo_table = dict()
-
-def memo_gcd(n, m):
-    global memo_table
-    while(True):
-        if n < m:
-            n, m = m, n
-        g = m
-        key = str(n) + "+" + str(m)
-        if key in memo_table:
-            return memo_table[key]
-        memo_table[key] = 
-        
-
-
-
-
-# while(a > 1 and b > 1):
-#     g = gcd(a, b)
-#     a -= g
-#     b -= g
-#     ans += 1
-
-# if a > b:
-#     a, b = b, a
-
-# if a <= 0:
-#     print(ans)
-# elif a == 1:
-#     ans += b
-#     print(ans)
+if s.index('R') < s.index('K') < s.rindex('R'):
+    print("Yes")
+else:
+    print("No")
